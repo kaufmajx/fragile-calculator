@@ -1,15 +1,15 @@
-# 🧮 fragile-calculator
+# fragile-calculator
 
-A calculator that works... most of the time.
+A simple calculator application built in Java.
 
 ## About
 
-`fragile-calculator` is a Java-based calculator application with an HTML front end. It handles the core arithmetic you'd expect — just maybe not as reliably as you'd hope.
+`fragile-calculator` is a Java application that provides basic arithmetic functionality. The project includes an HTML file used solely to render the in-app help menu.
 
 ## Tech Stack
 
-- **Java** — core calculation logic
-- **HTML** — user interface
+- **Java** — application logic and UI
+- **HTML** — help menu only
 
 ## Getting Started
 
@@ -17,39 +17,29 @@ A calculator that works... most of the time.
 
 - Java JDK 8 or higher
 
-### Running the App
+### Building the JAR
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/kaufmajx/fragile-calculator.git
-   cd fragile-calculator
-   ```
+The application must be packaged as a JAR file to run. From the project root:
 
-2. Compile the Java source files:
-   ```bash
-   javac src/*.java
-   ```
+```bash
+javac -d out src/*.java
+jar cfm fragile-calculator.jar MANIFEST.MF -C out .
+```
 
-3. Run the application:
-   ```bash
-   java -cp src Main
-   ```
+> Make sure your `MANIFEST.MF` specifies the correct `Main-Class` entry point.
 
-4. Open the HTML file in your browser if using the web interface:
-   ```bash
-   open src/index.html
-   ```
+### Running the Application
 
-## Features
+Once built, run the JAR directly:
 
-- Basic arithmetic operations (addition, subtraction, multiplication, division)
-- Simple, minimal interface
-- Proudly fragile
+```bash
+java -jar fragile-calculator.jar
+```
 
 ## Contributing
 
-Feel free to open issues or pull requests. Especially if you find a bug — there might be several.
+Pull requests and issue reports are welcome.
 
 ## License
 
-This project is unlicensed. Use at your own risk.
+This project is unlicensed.
